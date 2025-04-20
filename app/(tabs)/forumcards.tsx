@@ -1,38 +1,39 @@
+// ForumCard.tsx
 import React from 'react';
-import {Text, View,  ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 type Props = {
-    title : string
-    description : string
-}
+  title: string;
+  description: string;
+};
 
-const Card = (props : Props) => {
-    return(
-        <View style={styles.card}>
-            <Text style={styles.title}>This is lowk a card fr</Text>
-            <Text style={styles.detail}>This is cool asf</Text>
-        </View>
-    );
-}
+const ForumCard: React.FC<Props> = ({ title, description }) => {
+  return (
+    <View style={styles.card}>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.detail}>{description}</Text>
+    </View>
+  );
+};
 
+export default ForumCard;
 
 const styles = StyleSheet.create({
-    card: {
-        padding: 16,
-        marginVertical: 8,
-        backgroundColor: '#1338be',
-        borderRadius: 10,
-        elevation : 2,
-    },
-
-    title: {
-        fontWeight: 'bold',
-        fontSize: 18,
-        marginBottom: 4,
-    },
-    
-    detail: {
-        fontSize: 11,
-        marginBottom: 4,
-    }
+  card: {
+    padding: 16,
+    marginVertical: 8,
+    backgroundColor: '#1338be',
+    borderRadius: 10,
+    elevation: 2,
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 4,
+    color: '#fff',
+  },
+  detail: {
+    fontSize: 14,
+    color: '#eee',
+  },
 });
